@@ -45,6 +45,7 @@ const jobsRouter = require("./routes/jobsRoutes.js");
 app.use(express.json());
 app.use(helmet()); //ATTAQUE DANS L'ENTETE DES REPONSES
 app.use(xss());
+app.set("trust proxy", 1);
 app.use(
   //LIMIT LES REQUETES
   rateLimit({
